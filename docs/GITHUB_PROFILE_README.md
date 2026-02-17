@@ -3,7 +3,7 @@
 I build reliable Python automations that save teams time and money.
 My focus is web scraping, Telegram bots, and data pipelines for real business workflows.
 
-Location: Spain  
+Location: Brazil  
 Open to remote freelance projects.
 
 ---
