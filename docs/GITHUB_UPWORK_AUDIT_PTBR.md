@@ -52,8 +52,18 @@ Essa direção é boa para Upwork porque existem muitos jobs de:
 
 ## 2) Diagnóstico Upwork (com base no que foi possível validar)
 
-Não foi encontrado link público do Upwork dentro do perfil GitHub analisado.  
-Mesmo sem esse link, dá para evoluir muito com os ajustes abaixo (seção prática) e com os templates deste repositório.
+Foi enviado o link:
+
+`https://www.upwork.com/freelancers/~01e21ef6242b1686d8?mp_source=share`
+
+No ambiente de automação, a página retornou bloqueio Cloudflare (`403 / Just a moment`), então a extração técnica dos dados públicos ficou limitada.
+
+Mesmo com essa limitação, a otimização pode ser feita com alto impacto pelos templates criados:
+
+- `docs/UPWORK_PROFILE_TEMPLATE_PTBR.md`
+- `docs/UPWORK_PROFILE_TEMPLATE_EN.md`
+- `docs/CURADORIA_PROJETOS_PTBR.md`
+- `docs/ANALISE_UPWORK_LINK_PTBR.md`
 
 ### O que clientes de Upwork tendem a priorizar
 

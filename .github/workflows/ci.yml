@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - cursor/**
+  pull_request:
+
+jobs:
+  python-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r portfolio-projects/01-lead-enrichment-automation/requirements.txt
+          pip install -r portfolio-projects/02-price-monitoring-api/requirements.txt
+          pip install -r portfolio-projects/03-job-intelligence-dashboard/requirements.txt
+
+      - name: Compile Python sources
+        run: |
+          python -m compileall main.py scraper.py notifier.py
+          python -m compileall portfolio-projects

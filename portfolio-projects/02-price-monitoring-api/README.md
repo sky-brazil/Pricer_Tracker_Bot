@@ -1,5 +1,7 @@
 # Price Monitoring API (Python + Flask)
 
+Portuguese version: [README.pt-BR.md](./README.pt-BR.md)
+
 ## Business problem
 
 E-commerce operators and resellers need fast visibility of competitor prices, but manual checks are slow and unreliable.

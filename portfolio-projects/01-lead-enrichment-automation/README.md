@@ -1,5 +1,7 @@
 # Lead Enrichment Automation (Python)
 
+Portuguese version: [README.pt-BR.md](./README.pt-BR.md)
+
 ## Business problem
 
 Sales teams often work with raw CSV lead lists that are inconsistent and hard to prioritize.

@@ -1,5 +1,8 @@
 # Price Tracker Bot for E-commerce (USD)
 
+[![CI](https://github.com/sky-brazil/Pricer_Tracker_Bot/actions/workflows/ci.yml/badge.svg)](https://github.com/sky-brazil/Pricer_Tracker_Bot/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
 Python automation to monitor e-commerce prices and send alerts when products hit a target value.
 
 This repository is built as a practical portfolio project for freelance opportunities involving:
@@ -8,6 +11,8 @@ This repository is built as a practical portfolio project for freelance opportun
 - monitoring automations;
 - alerts and notifications;
 - lightweight client-ready Python tooling.
+
+Portuguese version: [README.pt-BR.md](./README.pt-BR.md)
 
 ## Features
 
@@ -114,6 +119,18 @@ For production projects, this base can be extended with:
 - persistent storage (SQLite/PostgreSQL);
 - email/Slack/webhook notifications.
 
+## Portfolio expansion for Upwork
+
+This repository also includes three standalone portfolio projects ready to be published as separate GitHub repos:
+
+- [portfolio-projects/01-lead-enrichment-automation](./portfolio-projects/01-lead-enrichment-automation)
+- [portfolio-projects/02-price-monitoring-api](./portfolio-projects/02-price-monitoring-api)
+- [portfolio-projects/03-job-intelligence-dashboard](./portfolio-projects/03-job-intelligence-dashboard)
+
+Documentation index:
+
+- [docs/README.md](./docs/README.md)
+
 ## License
 
-No license file is included yet. For commercial use, add a license before distribution.
+This project is licensed under the MIT License. See [LICENSE](./LICENSE).

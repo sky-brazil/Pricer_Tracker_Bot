@@ -1,5 +1,7 @@
 # Job Intelligence Dashboard (Python + Pandas)
 
+Portuguese version: [README.pt-BR.md](./README.pt-BR.md)
+
 ## Business problem
 
 Recruitment and talent teams collect job market data from multiple sources but struggle to transform raw CSV files into decision-ready insights.
