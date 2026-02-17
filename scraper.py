@@ -1,15 +1,65 @@
 import requests
 from bs4 import BeautifulSoup
 import os
+import re
 
 
-def fetch_current_price(url: str) -> float | None:
+def parse_price_text(raw_text: str) -> float | None:
+    """
+    Parse price text in common formats:
+    - "$1,299.99"
+    - "US$ 1.299,99"
+    - "1299.99"
+    """
+    text = (
+        raw_text.replace("US$", "")
+        .replace("$", "")
+        .replace("€", "")
+        .replace("£", "")
+        .replace("R$", "")
+    )
+    text = re.sub(r"\s+", "", text)
+    text = re.sub(r"[^0-9,.\-]", "", text)
+
+    if not text:
+        return None
+
+    # If both separators exist, assume the last one is decimal.
+    if "," in text and "." in text:
+        if text.rfind(",") > text.rfind("."):
+            text = text.replace(".", "").replace(",", ".")
+        else:
+            text = text.replace(",", "")
+    elif "," in text:
+        if text.count(",") > 1:
+            text = text.replace(",", "")
+        else:
+            integer_part, fractional_part = text.split(",", maxsplit=1)
+            if len(fractional_part) == 3:
+                text = integer_part + fractional_part
+            else:
+                text = integer_part + "." + fractional_part
+    elif "." in text:
+        if text.count(".") > 1:
+            text = text.replace(".", "")
+        else:
+            integer_part, fractional_part = text.split(".", maxsplit=1)
+            if len(fractional_part) == 3:
+                text = integer_part + fractional_part
+
+    try:
+        return float(text)
+    except ValueError:
+        return None
+
+
+def fetch_current_price(url: str, selector: str = "span.price") -> float | None:
     """
     Price extraction for demo purposes.
 
     - If `url` starts with http, tries HTTP request.
     - Otherwise, treats `url` as a local HTML file path.
-    - Looks for <span class="price">$199.99</span>.
+    - Looks for a price element using a CSS selector.
     """
 
     html = None
@@ -44,23 +94,18 @@ def fetch_current_price(url: str) -> float | None:
 
     soup = BeautifulSoup(html, "html.parser")
 
-    price_element = soup.find("span", class_="price")
+    price_element = soup.select_one(selector)
+    if not price_element and selector != "span.price":
+        # Keeps backward compatibility for legacy samples.
+        price_element = soup.select_one("span.price")
     if not price_element:
-        print(f"[WARN] Could not find <span class='price'> element for: {url}")
+        print(f"[WARN] Could not find selector '{selector}' for: {url}")
         return None
 
     raw_text = price_element.get_text(strip=True)
 
-    cleaned = (
-        raw_text.replace("US$", "")
-        .replace("$", "")
-        .replace("€", "")
-        .replace("£", "")
-        .replace(",", "")
-    )
-
-    try:
-        return float(cleaned)
-    except ValueError:
+    parsed = parse_price_text(raw_text)
+    if parsed is None:
         print(f"[WARN] Could not parse price from text '{raw_text}' on {url}")
         return None
+    return parsed
