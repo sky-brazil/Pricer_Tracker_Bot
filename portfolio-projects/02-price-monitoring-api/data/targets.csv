@@ -1,0 +1,2 @@
+name,url,target_price,currency,enabled
+Demo Product,test_product.html,250.00,USD,true

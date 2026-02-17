@@ -1,0 +1,6 @@
+job_id,title,company,location,remote,salary_usd
+1,Python Automation Engineer,Acme,Spain,true,90000
+2,Data Analyst,Nova Retail,UK,true,70000
+3,Backend Developer,Blue Sky Solutions,Portugal,false,65000
+4,Python Automation Engineer,Acme,Spain,true,92000
+5,BI Engineer,Northwind,Germany,true,85000
