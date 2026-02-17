@@ -2,8 +2,6 @@
 
 These three projects are designed to attract freelance work in the same line as your current GitHub portfolio: automation, scraping, and business reporting.
 
-Portuguese curation: [`../docs/CURADORIA_PROJETOS_PTBR.md`](../docs/CURADORIA_PROJETOS_PTBR.md)
-
 ## Included projects
 
 1. [`01-lead-enrichment-automation`](./01-lead-enrichment-automation)
@@ -28,7 +26,7 @@ Portuguese curation: [`../docs/CURADORIA_PROJETOS_PTBR.md`](../docs/CURADORIA_PR
 Each project folder is prepared to be copied to an independent repository.
 Each one includes:
 
-- `README.md` (EN) and `README.pt-BR.md` (PT-BR)
+- `README.md`
 - `LICENSE`
 - `.gitignore`
 - `.github/workflows/ci.yml`

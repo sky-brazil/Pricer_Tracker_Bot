@@ -1,9 +1,10 @@
-# Comandos de curadoria GitHub (executar na sua máquina)
+# GitHub Curation Commands (Run on your desktop)
 
-No ambiente automatizado, a integração atual não tem permissão de escrita para metadados de repositório (topics/pinned/bio).  
-Use os comandos abaixo no seu terminal local com sua conta autenticada.
+In this cloud environment, account-level metadata operations were blocked by token permissions.
 
-## 1) Adicionar topics
+Use these commands locally with your own authenticated GitHub account.
+
+## 1) Add repository topics
 
 ```bash
 gh repo edit sky-brazil/Pricer_Tracker_Bot --add-topic python --add-topic automation --add-topic web-scraping --add-topic telegram-bot --add-topic freelancer --add-topic upwork
@@ -13,24 +14,22 @@ gh repo edit sky-brazil/remoteok-job-report --add-topic python --add-topic panda
 gh repo edit sky-brazil/remoteok-job-scraper --add-topic python --add-topic selenium --add-topic web-scraping --add-topic jobs --add-topic freelancer --add-topic upwork
 ```
 
-## 2) Criar repositório de perfil (`sky-brazil/sky-brazil`)
+## 2) Create GitHub profile repository (`sky-brazil/sky-brazil`)
 
 ```bash
 mkdir sky-brazil && cd sky-brazil
 git init
-cp /CAMINHO/PARA/docs/GITHUB_PROFILE_README_TEMPLATE_EN.md README.md
+cp /PATH/TO/docs/GITHUB_PROFILE_README_TEMPLATE_EN.md README.md
 git add README.md
 git commit -m "docs: add profile README"
 gh repo create sky-brazil/sky-brazil --public --source=. --remote=origin --push
 ```
 
-## 3) Fixar repositórios no perfil (manual na interface)
+## 3) Pin repositories manually (GitHub web UI)
 
-No GitHub Web:
-
-1. Acesse seu perfil
-2. Clique em **Customize your pins**
-3. Selecione:
+1. Open your profile page.
+2. Click **Customize your pins**.
+3. Pin:
    - `Pricer_Tracker_Bot`
    - `B2b-Leads-Dashboard`
    - `Jobs_Telegram_Bot`

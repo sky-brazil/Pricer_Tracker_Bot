@@ -19,7 +19,7 @@ def load_products(csv_path: str):
     with open(csv_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            # enabled coluna string -> bool
+            # Convert CSV "enabled" field from string to bool
             enabled = str(row.get("enabled", "true")).lower() == "true"
             if not enabled:
                 continue
@@ -28,7 +28,7 @@ def load_products(csv_path: str):
                     "name": row["name"],
                     "url": row["url"],
                     "target_price": float(row["target_price"]),
-                    "currency": row.get("currency", "BRL"),
+                    "currency": row.get("currency", "USD"),
                 }
             )
     return products

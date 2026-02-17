@@ -12,8 +12,6 @@ This repository is built as a practical portfolio project for freelance opportun
 - alerts and notifications;
 - lightweight client-ready Python tooling.
 
-Portuguese version: [README.pt-BR.md](./README.pt-BR.md)
-
 ## Features
 
 - Reads products from CSV (`name`, `url`, `target_price`, `currency`, `enabled`).
