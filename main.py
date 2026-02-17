@@ -6,6 +6,7 @@ from scraper import fetch_current_price
 from notifier import send_telegram_message
 import csv
 import os
+import shutil
 
 
 def load_config(path: str = "config.yaml") -> dict:
@@ -18,7 +19,7 @@ def load_products(csv_path: str):
     with open(csv_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            # enabled coluna string -> bool
+            # Convert CSV "enabled" field from string to bool
             enabled = str(row.get("enabled", "true")).lower() == "true"
             if not enabled:
                 continue
@@ -27,7 +28,7 @@ def load_products(csv_path: str):
                     "name": row["name"],
                     "url": row["url"],
                     "target_price": float(row["target_price"]),
-                    "currency": row.get("currency", "BRL"),
+                    "currency": row.get("currency", "USD"),
                 }
             )
     return products
@@ -74,9 +75,12 @@ def main():
 
 
 if __name__ == "__main__":
-    # Se não existir config.yaml, usa config.example.yaml como base
-    if not os.path.exists("config.yaml") and os.path.exists("config.example.yaml"):
-        print("[INFO] config.yaml not found, using config.example.yaml for now.")
-        os.makedirs(".", exist_ok=True)
-        # Você pode copiar manualmente depois; aqui só avisa
+    if not os.path.exists("config.yaml"):
+        if os.path.exists("config.example.yaml"):
+            shutil.copyfile("config.example.yaml", "config.yaml")
+            print("[INFO] config.yaml created from config.example.yaml.")
+        else:
+            raise FileNotFoundError(
+                "config.yaml not found and config.example.yaml is missing."
+            )
     main()

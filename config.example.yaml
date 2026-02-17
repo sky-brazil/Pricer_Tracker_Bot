@@ -1,0 +1,23 @@
+check_interval_minutes: 60
+currency: "USD"
+
+data_source:
+  type: "csv"
+  path: "urls.example.csv"
+
+notifications:
+  telegram:
+    enabled: true
+    bot_token: "USE_ENV"
+    chat_id: "USE_ENV"
+
+  email:
+    enabled: false
+    smtp_host: "smtp.gmail.com"
+    smtp_port: 587
+    use_tls: true
+    username: "USE_ENV"
+    password: "USE_ENV"
+    from_email: "USE_ENV"
+    to_emails:
+      - "client@example.com"
