@@ -1,28 +1,38 @@
-# Price Tracker Bot - Professional Upwork-Style Delivery
+# Price Tracker Bot | Client-Ready Price Intelligence Automation
 
-This repository is structured as a client-ready automation project, focused on
-real business outcomes: faster buying decisions, competitor visibility, and
-less manual monitoring.
+This repository presents a production-oriented automation baseline designed for
+international clients who care about business outcomes, speed, and operational
+reliability.
 
-It is not a generic "script dump". The code, documentation, and portfolio
-positioning are organized so each project can be sold as a differentiated
-commercial service.
-
----
-
-## Why companies pay for this
-
-Clients on Upwork usually pay for measurable results, not code lines.
-This bot helps with:
-
-- reducing manual price checks;
-- reacting faster to discounts and margin opportunities;
-- protecting procurement decisions with repeatable monitoring;
-- creating a baseline automation that can be expanded into full intelligence.
+The delivery is positioned as a **commercial service**, not a generic script.
+It combines implementation, portfolio framing, and communication artifacts that
+support Upwork-style discovery calls and business-focused proposals.
 
 ---
 
-## Portfolio projects (each one has a different commercial angle)
+## Executive business summary
+
+Companies buy this type of solution to:
+
+- reduce repetitive manual price checks;
+- react faster to discount windows and margin opportunities;
+- build reliable procurement intelligence;
+- create an automation layer that can evolve into a broader decision platform.
+
+---
+
+## What clients receive
+
+- Config-driven monitoring (`config.yaml`) with clear defaults;
+- CSV onboarding with per-product CSS selector support;
+- resilient parsing for common US/EU currency formats;
+- single-run mode (`--once`) for demos, QA, and scheduled execution;
+- Telegram notifications with safe runtime fallback behavior;
+- practical logs for monitoring and troubleshooting.
+
+---
+
+## Portfolio offers (commercially differentiated)
 
 See `portfolio/README.md` for the full index.
 
@@ -31,35 +41,36 @@ See `portfolio/README.md` for the full index.
 3. `portfolio/03_map_compliance_monitor.md`
 4. `portfolio/04_procurement_negotiation_radar.md`
 
-Each project has:
-- specific business pain;
-- different KPI goals;
-- unique implementation scope;
-- realistic budget framing for Upwork conversations.
+Each profile includes:
+
+- specific business context;
+- measurable KPI goals;
+- scoped implementation path;
+- realistic pricing ranges for freelance discovery conversations.
 
 ---
 
-## Core technical features
+## Typical engagement models
 
-- Config-driven monitoring (`config.yaml`);
-- CSV-based product onboarding with per-item CSS selector;
-- robust price parser for multiple currency/locale formats;
-- one-shot mode (`--once`) for demos, cron jobs, and QA;
-- Telegram notifications with production-safe error handling;
-- clear logs for operational visibility.
+| Package | Focus | Typical range |
+| --- | --- | --- |
+| Starter Validation | Fast setup for critical SKUs and alert proof-of-value | USD 150-350 |
+| Growth Automation | Broader catalog coverage and monitoring workflow hardening | USD 400-1,000 |
+| Ongoing Optimization | Continuous iteration, tuning, and stakeholder-ready reporting | USD 100-500/week |
 
 ---
 
-## Project structure
+## Repository structure
 
-- `main.py`: entry point, config loading, CSV validation, run loop.
-- `scraper.py`: HTML fetch + selector extraction + resilient price parsing.
-- `notifier.py`: Telegram delivery with runtime safeguards.
-- `config.yaml`: local production baseline.
-- `config.example.yaml`: safe starter config.
-- `urls.example.csv`: example product list with selector field.
-- `test_product.html`: local HTML sample for quick validation.
-- `portfolio/`: differentiated project proposals for client-facing use.
+- `main.py` - CLI entry point, config handling, CSV loading, scheduling loop.
+- `scraper.py` - HTML retrieval, selector extraction, and price parsing logic.
+- `notifier.py` - Telegram transport with graceful runtime error handling.
+- `tests/test_price_parser.py` - parser and product-loading regression tests.
+- `config.yaml` - production-leaning baseline config.
+- `config.example.yaml` - safe starter template.
+- `urls.example.csv` - sample product registry.
+- `portfolio/` - client-facing project positioning.
+- `docs/` - profile-ready communication assets for international clients.
 
 ---
 
@@ -80,7 +91,7 @@ TELEGRAM_BOT_TOKEN=your_bot_token
 TELEGRAM_CHAT_ID=your_chat_id
 ```
 
-### 3) Review `config.yaml`
+### 3) Review configuration
 
 ```yaml
 check_interval_minutes: 60
@@ -101,7 +112,7 @@ name,url,target_price,currency,selector,enabled
 "Weekend Deals - Fashion","https://example.com/fashion-item",79.90,"USD","span.price",false
 ```
 
-### 5) Run once (recommended for validation)
+### 5) Validate with a single cycle
 
 ```bash
 python main.py --once
@@ -113,24 +124,27 @@ python main.py --once
 python main.py
 ```
 
----
+### 7) Run test suite
 
-## Human touch and differentiation (important)
-
-To avoid "assembly line" delivery:
-
-- each portfolio project has a different business narrative;
-- alert messages include decision-oriented guidance;
-- implementation can be tuned by niche (electronics, fashion, B2B procurement);
-- scope is defined by business priority first, tooling second.
-
-This keeps the work credible, client-specific, and commercially relevant.
+```bash
+python -m unittest discover -s tests -p "test_*.py"
+```
 
 ---
 
-## Suggested next upgrades for premium clients
+## Quality and professionalism signals
 
-- anti-duplication alert memory (avoid repeated notifications);
-- dashboard export (Google Sheets / BI);
-- scheduled reports for non-technical stakeholders;
-- rotating proxies / anti-block strategy for large-scale crawling.
+- English-only documentation curated for international audiences;
+- business narrative aligned with buyer priorities;
+- test coverage for core parsing and CSV ingestion flows;
+- CI-ready workflow for baseline validation;
+- explicit portfolio segmentation to avoid "one-size-fits-all" positioning.
+
+---
+
+## Recommended premium upgrades
+
+- alert de-duplication memory;
+- scheduled stakeholder reports;
+- dashboard exports (Google Sheets / BI);
+- anti-block strategy for larger crawling scale.

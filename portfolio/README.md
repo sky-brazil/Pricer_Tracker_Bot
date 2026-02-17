@@ -1,24 +1,35 @@
-# Portfolio index - differentiated commercial projects
+# Portfolio Index | Client-Ready Service Profiles
 
-This folder contains client-facing project profiles designed to look
-professional, commercial, and human (not mass-produced).
+This directory contains differentiated project narratives that can be used in:
 
-Each profile has:
-- a unique business context;
-- concrete KPIs;
-- realistic implementation steps;
-- budget framing compatible with Upwork discovery calls.
+- proposal links during Upwork outreach;
+- discovery-call preparation with international clients;
+- GitHub portfolio review by recruiters and hiring managers.
 
-## Project list
+Every profile is intentionally scoped to feel human-curated, with:
+
+- specific business pressure and buying context;
+- practical delivery scope and implementation steps;
+- measurable KPI outcomes;
+- realistic budget framing for freelance or retainer work.
+
+## Service profile catalog
 
 1. [Marketplace Guardian](01_marketplace_guardian.md)  
-   Competitive tracking for catalog managers that need margin protection.
+   Competitive monitoring for catalog teams that need margin protection.
 
 2. [Flash Deals Scout](02_flash_deals_scout.md)  
-   Fast discount detection for stores that win through timing and agility.
+   Rapid discount detection for operations where timing drives conversion.
 
 3. [MAP Compliance Monitor](03_map_compliance_monitor.md)  
-   Brand protection workflow for unauthorized discount detection.
+   Brand compliance workflow for reseller policy enforcement.
 
 4. [Procurement Negotiation Radar](04_procurement_negotiation_radar.md)  
-   B2B purchasing intelligence to improve supplier negotiation leverage.
+   B2B sourcing intelligence to strengthen supplier negotiation leverage.
+
+## How to use this folder professionally
+
+1. Pick one profile that matches the client's immediate pain.
+2. Send that profile first instead of a generic full portfolio dump.
+3. Anchor the conversation on KPI targets and timeline feasibility.
+4. Expand scope only after validating one high-impact workflow.
