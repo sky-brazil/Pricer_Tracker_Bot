@@ -1,8 +1,8 @@
-# Global price tracker config (remote-friendly, USD by default)
+# Price Tracker - production-ready baseline config.
+# Use this file as your default local setup.
 
-check_interval_minutes: 60        # how often to run the price check
-
-currency: "USD"                   # default display currency
+check_interval_minutes: 60
+currency: "USD"
 
 data_source:
   type: "csv"
@@ -11,9 +11,11 @@ data_source:
 notifications:
   telegram:
     enabled: true
-    bot_token: "USE_ENV"   # read from .env
-    chat_id: "USE_ENV"
+    bot_token: "USE_ENV"   # loaded from TELEGRAM_BOT_TOKEN
+    chat_id: "USE_ENV"     # loaded from TELEGRAM_CHAT_ID
 
+  # Optional extension point for client-specific email channels.
+  # Not implemented in this baseline package.
   email:
     enabled: false
     smtp_host: "smtp.gmail.com"

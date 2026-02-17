@@ -1,0 +1,12 @@
+check_interval_minutes: 30
+currency: "USD"
+
+data_source:
+  type: "csv"
+  path: "urls.example.csv"
+
+notifications:
+  telegram:
+    enabled: false
+    bot_token: "USE_ENV"
+    chat_id: "USE_ENV"

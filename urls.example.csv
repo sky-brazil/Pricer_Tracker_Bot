@@ -1,2 +1,3 @@
-name,url,target_price,currency,enabled
-"Local Test Product","test_product.html",250.00,"USD",true
+name,url,target_price,currency,selector,enabled
+"Local Test Product - Electronics","test_product.html",250.00,"USD","span.price",true
+"Weekend Deals - Fashion","https://example.com/fashion-item",79.90,"USD","span.price",false
