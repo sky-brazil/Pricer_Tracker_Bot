@@ -7,37 +7,17 @@ proposals, and introductory messages.
 
 ## Suggested profile headline
 
-**Python Automation Developer | Web Scraping, Telegram Bots, and Data Pipelines**
+**Python Automation | Web Scraping, Telegram Bots, Data Pipelines**
 
 ---
 
 ## Suggested profile overview
 
-I help teams automate repetitive workflows with reliable Python solutions that
-save time, reduce operational cost, and improve decision speed.
+I build Python automations that save teams time and money.
+Web scraping, Telegram bots, and data pipelines with fast, reliable delivery.
 
-I combine web scraping, Telegram bot integrations, and practical data pipelines
-to turn raw data into decision-ready outputs.
-
-Examples from my public GitHub portfolio include:
-
-- price monitoring automation with Telegram alerts;
-- remote job scraping and reporting pipelines (CSV/Excel + pandas);
-- Telegram bot workflows with per-user filtering logic;
-- B2B lead processing dashboard flows for faster outreach operations.
-
-What clients usually hire me for:
-
-- scraping websites and normalizing structured outputs;
-- building alerting workflows (Telegram/API-ready notifications);
-- creating recurring reporting pipelines for operations teams;
-- iterating quickly on automation that shows measurable business value.
-
-Typical delivery flow:
-
-1. map the highest-impact use case;
-2. deliver a small but measurable first milestone in days, not weeks;
-3. scale only after validation with real operating feedback.
+Short version for limited fields:
+Python automation for scraping, Telegram alerts, and data pipelines.
 
 ---
 
