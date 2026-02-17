@@ -1,6 +1,43 @@
 import requests
 from bs4 import BeautifulSoup
 import os
+import re
+
+
+def _parse_price(raw_text: str) -> float | None:
+    """
+    Parse common international price formats.
+
+    Examples:
+    - "$1,299.99" -> 1299.99
+    - "EUR 1.299,99" -> 1299.99
+    - "199,99" -> 199.99
+    """
+    cleaned = re.sub(r"[^\d,.\-]", "", raw_text)
+    if not cleaned:
+        return None
+
+    has_comma = "," in cleaned
+    has_dot = "." in cleaned
+
+    if has_comma and has_dot:
+        # Use the last separator as decimal marker and remove the other.
+        if cleaned.rfind(",") > cleaned.rfind("."):
+            cleaned = cleaned.replace(".", "").replace(",", ".")
+        else:
+            cleaned = cleaned.replace(",", "")
+    elif has_comma and not has_dot:
+        # If there is a single comma and exactly 2 digits after it, treat it as decimal.
+        parts = cleaned.split(",")
+        if len(parts) == 2 and len(parts[1]) in {2, 3}:
+            cleaned = ".".join(parts)
+        else:
+            cleaned = cleaned.replace(",", "")
+
+    try:
+        return float(cleaned)
+    except ValueError:
+        return None
 
 
 def fetch_current_price(url: str) -> float | None:
@@ -50,17 +87,8 @@ def fetch_current_price(url: str) -> float | None:
         return None
 
     raw_text = price_element.get_text(strip=True)
-
-    cleaned = (
-        raw_text.replace("US$", "")
-        .replace("$", "")
-        .replace("€", "")
-        .replace("£", "")
-        .replace(",", "")
-    )
-
-    try:
-        return float(cleaned)
-    except ValueError:
+    parsed_price = _parse_price(raw_text)
+    if parsed_price is None:
         print(f"[WARN] Could not parse price from text '{raw_text}' on {url}")
         return None
+    return parsed_price
